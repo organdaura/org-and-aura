@@ -7,11 +7,16 @@ export async function GET() {
   const startTime = Date.now();
   let dbStatus = "healthy";
 
+  let dbError: string | null = null;
+  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrlHost = dbUrl ? (dbUrl.includes("@") ? dbUrl.split("@")[1].split("/")[0] : "invalid-format") : "missing";
+
   try {
     // Ping database
     await prisma.$queryRaw`SELECT 1`;
   } catch (error) {
     dbStatus = "unhealthy";
+    dbError = error instanceof Error ? error.message : String(error);
   }
 
   const responseTime = Date.now() - startTime;
@@ -25,6 +30,9 @@ export async function GET() {
         database: {
           status: dbStatus,
           responseTimeMs: responseTime,
+          host: dbUrlHost,
+          hasUrl: !!dbUrl,
+          error: dbError,
         },
       },
     },
