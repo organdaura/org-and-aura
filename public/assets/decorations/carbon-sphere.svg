@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none" opacity="0.65">
+  <defs>
+    <radialGradient id="sphereGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#DEEAE0" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#BCD4C1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      @keyframes gyroSpinSphere {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .gyro-sphere-rotor {
+        transform-origin: 250px 250px;
+        animation: gyroSpinSphere 30s linear infinite;
+        will-change: transform;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gyro-sphere-rotor {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="250" cy="250" r="220" fill="url(#sphereGlow)"/>
+
+  <!-- Unified Gyroscopic Wireframe Rotor -->
+  <g class="gyro-sphere-rotor">
+    <!-- Concentric dotted latitudinal rings -->
+    <ellipse cx="250" cy="250" rx="200" ry="200" stroke="#739F7E" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.6"/>
+    <ellipse cx="250" cy="250" rx="190" ry="150" stroke="#5D8B69" stroke-width="1.2" stroke-dasharray="2 5" opacity="0.7"/>
+    <ellipse cx="250" cy="250" rx="170" ry="100" stroke="#4A7555" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.8"/>
+    <ellipse cx="250" cy="250" rx="140" ry="50" stroke="#3D684C" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.9"/>
+    <line x1="50" y1="250" x2="450" y2="250" stroke="#3D684C" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.8"/>
+    <ellipse cx="250" cy="250" rx="140" ry="50" stroke="#3D684C" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.9" transform="rotate(30 250 250)"/>
+    <ellipse cx="250" cy="250" rx="170" ry="100" stroke="#5D8B69" stroke-width="1.2" stroke-dasharray="3 5" opacity="0.7" transform="rotate(60 250 250)"/>
+    <ellipse cx="250" cy="250" rx="190" ry="150" stroke="#739F7E" stroke-width="1.2" stroke-dasharray="3 6" opacity="0.6" transform="rotate(90 250 250)"/>
+    <ellipse cx="250" cy="250" rx="170" ry="100" stroke="#5D8B69" stroke-width="1.2" stroke-dasharray="3 5" opacity="0.7" transform="rotate(120 250 250)"/>
+
+    <!-- Radial grid points -->
+    <g fill="#4A7555">
+      <circle cx="250" cy="50" r="3" opacity="0.8"/>
+      <circle cx="250" cy="450" r="3" opacity="0.8"/>
+      <circle cx="50" cy="250" r="3" opacity="0.8"/>
+      <circle cx="450" cy="250" r="3" opacity="0.8"/>
+      <circle cx="110" cy="110" r="2.5" opacity="0.7"/>
+      <circle cx="390" cy="110" r="2.5" opacity="0.7"/>
+      <circle cx="110" cy="390" r="2.5" opacity="0.7"/>
+      <circle cx="390" cy="390" r="2.5" opacity="0.7"/>
+      <circle cx="250" cy="250" r="4" opacity="0.9"/>
+    </g>
+  </g>
+</svg>

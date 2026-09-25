@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+    <defs>
+      <linearGradient id="goldBlogGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#18221C"/>
+        <stop offset="100%" stop-color="#2D3E30"/>
+      </linearGradient>
+    </defs>
+    <rect width="600" height="360" rx="16" fill="url(#goldBlogGrad)"/>
+    <circle cx="300" cy="180" r="110" stroke="#D4AF37" stroke-width="2" stroke-dasharray="6 6"/>
+    <circle cx="300" cy="180" r="80" stroke="#F3E5AB" stroke-width="3"/>
+    <text x="300" y="175" text-anchor="middle" fill="#F3E5AB" font-family="serif" font-size="22" font-weight="bold" letter-spacing="4">LUXURY</text>
+    <text x="300" y="200" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="12" letter-spacing="2">SUSTAINABILITY</text>
+  </svg>

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-serif: "Playfair Display", "Cinzel", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FBF8F2;
+    color: #18221C;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FBF8F2;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Custom subtle focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid #4F7C5A;
+    outline-offset: 2px;
+  }
+
+  /* Selection style matching botanical brand */
+  ::selection {
+    background-color: #DEEAE0;
+    color: #1B2E20;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE5;
+}
+::-webkit-scrollbar-thumb {
+  background: #BCD4C1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6B9B75;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Organic card styling utilities */
+.card-organic {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px -4px rgba(45, 62, 48, 0.08), 0 2px 8px -2px rgba(45, 62, 48, 0.04);
+  border: 1px solid rgba(222, 234, 224, 0.4);
+}
+
+.card-warm {
+  background: #F4EFE5;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(45, 62, 48, 0.06);
+  border: 1px solid rgba(216, 205, 187, 0.5);
+}

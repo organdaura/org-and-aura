@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <style>
+      @keyframes gyroSpinAnatomy {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .gyro-anatomy-rotor {
+        transform-origin: 270px 230px;
+        animation: gyroSpinAnatomy 30s linear infinite;
+        will-change: transform;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gyro-anatomy-rotor {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Unified Gyroscopic Rotor -->
+  <g class="gyro-anatomy-rotor">
+    <!-- Dotted spiral orbit tracks -->
+    <g stroke="#8DB695" stroke-width="1.2" stroke-dasharray="2 6" opacity="0.6">
+      <ellipse cx="280" cy="220" rx="190" ry="85" transform="rotate(-35 280 220)"/>
+      <ellipse cx="280" cy="220" rx="160" ry="70" transform="rotate(25 280 220)"/>
+      <ellipse cx="280" cy="220" rx="210" ry="100" transform="rotate(-65 280 220)"/>
+    </g>
+
+    <!-- Orbital particle dots -->
+    <g fill="#4F7C5A" opacity="0.75">
+      <circle cx="150" cy="120" r="3"/>
+      <circle cx="210" cy="90" r="2.5"/>
+      <circle cx="380" cy="140" r="3.5"/>
+      <circle cx="430" cy="220" r="3"/>
+      <circle cx="390" cy="310" r="2.5"/>
+      <circle cx="210" cy="360" r="3"/>
+      <circle cx="120" cy="280" r="2.5"/>
+    </g>
+
+    <!-- Geodesic Sphere Mesh -->
+    <g stroke="#3D684C" stroke-width="1.6" opacity="0.85">
+      <!-- Outer perimeter polygon -->
+      <polygon points="260,110 330,135 375,190 380,260 340,325 270,350 200,325 160,260 165,190 210,135" fill="#FFFFFF" fill-opacity="0.2"/>
+      
+      <!-- Interior triangulation lines -->
+      <line x1="260" y1="110" x2="270" y2="230"/>
+      <line x1="330" y1="135" x2="270" y2="230"/>
+      <line x1="375" y1="190" x2="270" y2="230"/>
+      <line x1="380" y1="260" x2="270" y2="230"/>
+      <line x1="340" y1="325" x2="270" y2="230"/>
+      <line x1="270" y1="350" x2="270" y2="230"/>
+      <line x1="200" y1="325" x2="270" y2="230"/>
+      <line x1="160" y1="260" x2="270" y2="230"/>
+      <line x1="165" y1="190" x2="270" y2="230"/>
+      <line x1="210" y1="135" x2="270" y2="230"/>
+
+      <!-- Cross geometric chords -->
+      <line x1="210" y1="135" x2="330" y2="135"/>
+      <line x1="330" y1="135" x2="380" y2="260"/>
+      <line x1="380" y1="260" x2="270" y2="350"/>
+      <line x1="270" y1="350" x2="160" y2="260"/>
+      <line x1="160" y1="260" x2="210" y2="135"/>
+
+      <line x1="260" y1="110" x2="375" y2="190"/>
+      <line x1="375" y1="190" x2="340" y2="325"/>
+      <line x1="340" y1="325" x2="200" y2="325"/>
+      <line x1="200" y1="325" x2="165" y2="190"/>
+      <line x1="165" y1="190" x2="260" y2="110"/>
+    </g>
+
+    <!-- Vertex nodes -->
+    <g fill="#254130">
+      <circle cx="260" cy="110" r="3.5"/>
+      <circle cx="330" cy="135" r="3.5"/>
+      <circle cx="375" cy="190" r="3.5"/>
+      <circle cx="380" cy="260" r="3.5"/>
+      <circle cx="340" cy="325" r="3.5"/>
+      <circle cx="270" cy="350" r="3.5"/>
+      <circle cx="200" cy="325" r="3.5"/>
+      <circle cx="160" cy="260" r="3.5"/>
+      <circle cx="165" cy="190" r="3.5"/>
+      <circle cx="210" cy="135" r="3.5"/>
+      <circle cx="270" cy="230" r="5" fill="#4F7C5A"/>
+    </g>
+  </g>
+</svg>

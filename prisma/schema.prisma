@@ -1,0 +1,153 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  USER
+}
+
+enum RequestStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWED
+  ACCEPTED
+  REJECTED
+}
+
+enum MemberType {
+  FOUNDER
+  TEAM
+  MENTOR
+}
+
+model User {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  passwordHash String?
+  role         Role      @default(USER)
+  provider     String    @default("EMAIL")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+
+  @@index([email])
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([userId])
+}
+
+model SupportRequest {
+  id         String        @id @default(uuid())
+  name       String
+  email      String
+  subject    String
+  message    String
+  status     RequestStatus @default(NEW)
+  adminNotes String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+model CareerApplication {
+  id              String            @id @default(uuid())
+  fullName        String
+  mobileNumber    String
+  email           String
+  physicalAddress String
+  topSkills       String
+  department      String
+  roleType        String
+  status          ApplicationStatus @default(PENDING)
+  resumeUrl       String?
+  resumeFilename  String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+model Signup {
+  id        String   @id @default(uuid())
+  name      String?
+  email     String   @unique
+  provider  String   @default("GOOGLE")
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+}
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  body        String
+  category    String
+  published   Boolean  @default(true)
+  publishedAt DateTime @default(now())
+  imageRef    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+  @@index([publishedAt])
+}
+
+model TeamMember {
+  id           String     @id @default(uuid())
+  name         String
+  role         String
+  type         MemberType @default(TEAM)
+  imageRef     String?
+  displayOrder Int        @default(0)
+  published    Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([type])
+  @@index([displayOrder])
+  @@index([published])
+}
+
+model GalleryItem {
+  id           String   @id @default(uuid())
+  title        String
+  caption      String?
+  imageRef     String?
+  displayOrder Int      @default(0)
+  published    Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([displayOrder])
+  @@index([published])
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8EFF8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#skyGrad)"/>
+  
+  <!-- Campus Building Illustration -->
+  <rect x="80" y="160" width="640" height="260" rx="8" fill="#FFFBF2" stroke="#4F7C5A" stroke-width="2"/>
+  
+  <!-- Roof cornice -->
+  <rect x="60" y="140" width="680" height="24" rx="4" fill="#3D684C"/>
+  <rect x="70" y="164" width="660" height="8" fill="#D4AF37"/>
+
+  <!-- Window grid -->
+  <g fill="#254130" opacity="0.7">
+    <!-- Row 1 -->
+    <rect x="120" y="190" width="60" height="40" rx="4"/>
+    <rect x="220" y="190" width="60" height="40" rx="4"/>
+    <rect x="320" y="190" width="60" height="40" rx="4"/>
+    <rect x="420" y="190" width="60" height="40" rx="4"/>
+    <rect x="520" y="190" width="60" height="40" rx="4"/>
+    <rect x="620" y="190" width="60" height="40" rx="4"/>
+
+    <!-- Row 2 -->
+    <rect x="120" y="250" width="60" height="40" rx="4"/>
+    <rect x="220" y="250" width="60" height="40" rx="4"/>
+    <rect x="320" y="250" width="60" height="40" rx="4"/>
+    <rect x="420" y="250" width="60" height="40" rx="4"/>
+    <rect x="520" y="250" width="60" height="40" rx="4"/>
+    <rect x="620" y="250" width="60" height="40" rx="4"/>
+
+    <!-- Row 3 -->
+    <rect x="120" y="310" width="60" height="40" rx="4"/>
+    <rect x="220" y="310" width="60" height="40" rx="4"/>
+    <rect x="320" y="310" width="60" height="40" rx="4"/>
+    <rect x="420" y="310" width="60" height="40" rx="4"/>
+    <rect x="520" y="310" width="60" height="40" rx="4"/>
+    <rect x="620" y="310" width="60" height="40" rx="4"/>
+  </g>
+
+  <!-- Campus Trees -->
+  <circle cx="100" cy="400" r="60" fill="#4F7C5A" opacity="0.8"/>
+  <circle cx="700" cy="400" r="60" fill="#4F7C5A" opacity="0.8"/>
+
+  <!-- Title Badge Overlay matching video -->
+  <rect x="160" y="40" width="480" height="70" rx="16" fill="#18221C" fill-opacity="0.8"/>
+  <text x="400" y="72" text-anchor="middle" fill="#FFFFFF" font-family="serif" font-size="20" font-weight="bold" letter-spacing="2">SRM EASWARI ENGINEERING COLLEGE</text>
+  <text x="400" y="96" text-anchor="middle" fill="#BCD4C1" font-family="sans-serif" font-size="14">Chennai, India &bull; Incubation Hub</text>
+</svg>
