@@ -34,8 +34,8 @@ export function getGoogleOAuthRedirectUri(): string {
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}/api/auth/google/callback`;
   }
-  if (process.env.NODE_ENV === "production") {
-    return "https://org-and-aura.vercel.app/api/auth/google/callback";
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}/api/auth/google/callback`;
   }
   // Default to localhost
   return "http://localhost:3000/api/auth/google/callback";
