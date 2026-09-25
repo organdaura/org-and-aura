@@ -10,6 +10,8 @@ export async function GET() {
   let dbError: string | null = null;
   const dbUrl = process.env.DATABASE_URL || "";
   const dbUrlHost = dbUrl ? (dbUrl.includes("@") ? dbUrl.split("@")[1].split("/")[0] : "invalid-format") : "missing";
+  const pw = (dbUrl.includes("://") && dbUrl.includes("@")) ? (dbUrl.split("://")[1].split("@")[0].split(":")[1] || "") : "";
+  const pwPreview = pw ? `${pw.slice(0, 5)}... (len ${pw.length})` : "none";
 
   try {
     // Ping database
@@ -31,6 +33,7 @@ export async function GET() {
           status: dbStatus,
           responseTimeMs: responseTime,
           host: dbUrlHost,
+          pwPreview,
           hasUrl: !!dbUrl,
           error: dbError,
         },
