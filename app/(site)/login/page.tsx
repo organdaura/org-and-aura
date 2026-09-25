@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AlertCircle, Loader2, Lock, Mail } from "lucide-react";
 import BotanicalFrame from "@/components/ui/BotanicalFrame";
 import { GoogleAuthModal } from "@/components/auth/GoogleAuthModal";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
@@ -42,7 +42,6 @@ export default function LoginPage() {
         window.location.href = "/api/auth/google/login";
         return;
       }
-      // Fallback to interactive demo modal if credentials not configured
       setGoogleModalOpen(true);
     } catch {
       setGoogleModalOpen(true);
@@ -84,9 +83,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="w-full relative flex flex-col items-center justify-center min-h-[75vh]">
-      <BotanicalFrame position="top" className="w-full max-w-4xl" />
-
+    <>
       <div className="w-full max-w-md px-4 py-8">
         <div className="card-organic p-6 sm:p-8 bg-white/95 shadow-organic-lg text-center space-y-6">
           <div className="space-y-2">
@@ -224,14 +221,32 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <BotanicalFrame position="bottom" className="w-full max-w-4xl" />
-
       {/* Google Auth Modal */}
       <GoogleAuthModal
         isOpen={googleModalOpen}
         onClose={() => setGoogleModalOpen(false)}
         onSuccess={handleGoogleSuccess}
       />
+    </>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <div className="w-full relative flex flex-col items-center justify-center min-h-[75vh]">
+      <BotanicalFrame position="top" className="w-full max-w-4xl" />
+
+      <Suspense
+        fallback={
+          <div className="w-full max-w-md px-4 py-16 flex justify-center">
+            <Loader2 className="w-8 h-8 animate-spin text-forest-600" />
+          </div>
+        }
+      >
+        <LoginForm />
+      </Suspense>
+
+      <BotanicalFrame position="bottom" className="w-full max-w-4xl" />
     </div>
   );
 }
