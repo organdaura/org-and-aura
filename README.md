@@ -85,7 +85,7 @@ Visit [http://localhost:3000](http://localhost:3000).
 All media assets are centrally registered in `config/assets.config.ts`. To replace placeholder graphics with real photography when available, place your `.webp` or `.png` files in the corresponding `public/assets/` subfolder and update the `src` path in `config/assets.config.ts` without touching any component code:
 
 - **Branding**: `public/assets/branding/logo.png`
-- **Hero Framing**: `public/assets/decorations/leaves-top.svg`, `leaves-bottom.svg`
+- **Hero Framing**: `public/assets/decorations/leaves-branch*.png`
 - **Product**: `public/assets/product/sandi-diagram.svg`, `sandi-rendering.svg`
 - **Gallery**: `public/assets/gallery/`
 - **Blog Thumbnails**: `public/assets/blog/`
