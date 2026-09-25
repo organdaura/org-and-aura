@@ -7,8 +7,8 @@ import { Shield, Lock, Mail, AlertCircle, Loader2 } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@organdaura.com");
-  const [password, setPassword] = useState("Admin@OrgAura2026!");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -78,7 +78,9 @@ export default function AdminLoginPage() {
                 <input
                   id="admin-email"
                   type="email"
+                  autoComplete="username"
                   required
+                  placeholder="admin@organdaura.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-cream-50/60 border border-cream-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500"
@@ -98,7 +100,9 @@ export default function AdminLoginPage() {
                 <input
                   id="admin-password"
                   type="password"
+                  autoComplete="current-password"
                   required
+                  placeholder="••••••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-cream-50/60 border border-cream-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500"
@@ -121,10 +125,6 @@ export default function AdminLoginPage() {
               )}
             </button>
           </form>
-
-          <div className="text-[11px] text-center text-charcoal-600 border-t border-cream-200 pt-3">
-            Default seed credentials pre-filled for local verification.
-          </div>
         </div>
       </div>
     </div>

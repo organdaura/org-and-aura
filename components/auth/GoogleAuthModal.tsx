@@ -50,11 +50,6 @@ export function GoogleAuthModal({ isOpen, onClose, onSuccess }: GoogleAuthModalP
     }
   };
 
-  const handleQuickDemo = (demoEmail: string, demoName: string) => {
-    setGoogleEmail(demoEmail);
-    setGoogleName(demoName);
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-900/60 backdrop-blur-sm animate-in fade-in">
       <div className="bg-white rounded-3xl shadow-organic-lg max-w-md w-full p-6 sm:p-8 space-y-6 relative border border-cream-200">
@@ -136,27 +131,6 @@ export function GoogleAuthModal({ isOpen, onClose, onSuccess }: GoogleAuthModalP
                 onChange={(e) => setGoogleEmail(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-cream-50/70 border border-cream-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500"
               />
-            </div>
-          </div>
-
-          {/* Preset quick test shortcuts */}
-          <div className="pt-1">
-            <p className="text-[11px] text-charcoal-500 mb-1.5">Quick fill test accounts:</p>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={() => handleQuickDemo("sustainability.lead@gmail.com", "Maya Green")}
-                className="text-[10px] px-2.5 py-1 bg-cream-100 hover:bg-cream-200 text-charcoal-700 rounded-lg transition-colors"
-              >
-                Maya Green
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickDemo("eco.innovator@gmail.com", "Devon Park")}
-                className="text-[10px] px-2.5 py-1 bg-cream-100 hover:bg-cream-200 text-charcoal-700 rounded-lg transition-colors"
-              >
-                Devon Park
-              </button>
             </div>
           </div>
 

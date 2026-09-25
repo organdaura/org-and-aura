@@ -290,31 +290,6 @@ The SanDi processing chamber operates under precise microprocessor control, util
   }
   console.log(`✅ Seeded ${galleryItems.length} gallery items`);
 
-  // 5. Seed an initial Support Request & Career Application for dashboard preview
-  await prisma.supportRequest.create({
-    data: {
-      name: "Healthcare Facility Manager",
-      email: "facility@apollohospitals.org",
-      subject: "Pilot Installation Inquiry for Wing B",
-      message:
-        "We are interested in installing 4 SanDi units in our outpatient clinic to evaluate odor control and custodial efficiency.",
-      status: "NEW",
-    },
-  });
-
-  await prisma.careerApplication.create({
-    data: {
-      fullName: "Aditi Sharma",
-      mobileNumber: "+91 9876543210",
-      email: "aditi.sharma@example.com",
-      physicalAddress: "Anna Nagar, Chennai, India",
-      topSkills: "Embedded C, Microcontrollers, SolidWorks CAD",
-      department: "Hardware Engineering",
-      roleType: "Full-time",
-      status: "PENDING",
-    },
-  });
-
   console.log("🚀 Database seeding completed successfully!");
 }
 
