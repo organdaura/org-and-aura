@@ -148,9 +148,9 @@ export const ASSETS = {
     member1: {
       id: "team-lokesh-rao",
       name: "Lokesh Rao",
-      role: "Hardware Architecture",
+      role: "Product Architecture & System Integration Lead",
       src: "/assets/team/lokesh-rao.svg",
-      alt: "Lokesh Rao - Hardware Architecture",
+      alt: "Lokesh Rao - Product Architecture & System Integration Lead",
     },
     member2: {
       id: "team-bargav",

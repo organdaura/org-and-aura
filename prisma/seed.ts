@@ -231,7 +231,7 @@ The SanDi processing chamber operates under precise microprocessor control, util
     },
     {
       name: "Lokesh Rao B",
-      role: "Electrical & Embedded Engineer",
+      role: "Product Architecture & System Integration Lead",
       type: MemberType.TEAM,
       displayOrder: 7,
       imageRef: "/assets/team/lokesh-rao-b.jpeg",
