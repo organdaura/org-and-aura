@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "@/lib/utils/locale";
 import "./globals.css";
 
@@ -79,6 +80,7 @@ export default function RootLayout({
         className="font-sans min-h-screen flex flex-col bg-cream-100 text-charcoal-900 antialiased selection:bg-forest-100 selection:text-forest-900"
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
